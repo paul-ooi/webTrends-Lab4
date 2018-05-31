@@ -1,1 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+#mainNav {
+    position: relative;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+}
+
+#mainNav {
+    flex-flow: row nowrap;
+    padding: 0;
+}
+
+/* #mainNav li:hover {
+    background-color: rgb(165, 220, 228);
+} */
+
+/* SUB MENU STYLING */
+
+.navLvl2, .navLvl3  {
+    position: absolute;
+    left: -10000px;
+    padding: 0px;
+}
+
+.navLvl2 li {
+    display: flex;
+    margin: 0.25em 0;
+}
+
+.navLvl2 li:hover .navLvl3 {
+    display: inline-block;
+    margin: 0 0.5em;
+}
+
+#mainNav li:first-of-type {
+    margin-top: 0;
+}
+
+#mainNav > li:hover .navLvl2 {
+    left: 0px;
+}
+
+
+ul.navLvl2>li:hover .navLvl3 {
+    position: relative;
+    left: 0px;
+}
