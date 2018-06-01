@@ -1,0 +1,81 @@
+//VARIABLES
+$hoverBackgroundColor : rgb(143, 84, 84);
+$hoverLinkColor : rgb(247, 234, 234);
+$standardLinkColor : rgb(37, 26, 26);
+
+
+// OVERALL NAV STYLES
+header {
+    nav {
+        position: relative;
+        margin: 0 auto;
+        width: 80%;
+
+    }
+
+    #mainNav {
+        display: flex;
+        position: relative;
+        flex-flow: row nowrap;
+        padding: 0;
+        list-style: none;
+
+        > li {
+            padding-right: 4em;
+
+            &:hover {
+                > ul {
+                    left: 0px;
+                }
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: $standardLinkColor;
+        }
+
+        li {
+            position: relative;
+
+            &:hover {
+                background-color: $hoverBackgroundColor;
+
+                > a {
+                    color: $hoverLinkColor;
+                }
+            }
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        // SUB MENU STYLING
+        .navLvl2 {
+            position: absolute;
+            left: -10000px;
+
+            > li {
+                margin: 0.25em 0;
+                padding-right: 0.5em;
+                
+                &:hover {
+                    > ul {
+                        left: 100%;
+                        top: 0%;
+                    }
+                }
+            }
+
+        }
+        
+        .navLvl3 {
+            position: absolute;
+            left: -10000px;
+            width: 150%;
+        }
+
+    }
+}
