@@ -1,0 +1,67 @@
+//SASS allows to have variables
+
+//font sizes
+$big-font: 25px;
+$med-font: 20px;
+$small-font: 18px;
+
+//colors
+$menu-colors: rgb(50, 141, 148);
+$menu-text-colors: rgb(216, 119, 89);
+
+.page-wrapper {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+li {
+    list-style-type: none;
+
+    &:hover {
+        background-color: $menu-colors;
+    }
+}
+
+header {
+    nav {
+        .links { // <ul>, think of the curly braces as the opening and closing tags of the elements being targeted
+            > li { // add the > direct selector for your element on this line (these are the parent links) <li>
+                display: inline;
+                position: relative;
+                font-size: $big-font;
+
+                .nested-links { 
+                    padding-left: 0;
+                    position: absolute;
+                    left: 0; // This is what moves the nested-link relative to the position of the parent
+                    top: 100%; //this is what moves the nested-links down from the top of the full height of the parent link so that it is no longer overlapping
+                    display: none;
+                    font-size: $med-font;
+
+                    li { // these are the nested <li> links, the 2nd level, directly under the parent <li> links
+                        position: relative;
+
+                        .sublinks {
+                            position: absolute;
+                            top: 0%;
+                            left: 100%;
+                            display: none;
+                            font-size: $small-font;
+                            width: 200%;
+                        }
+
+                        &:hover > .sublinks {
+                            display: block;
+                        }
+                    }
+
+                }
+
+                &:hover > .nested-links { //The & symbol refers to the parent of the curly braces, in this case the <li> elements that are the parent links
+                    display: inline-block;
+                }
+            } // </li>
+
+        } // </ul>
+    }
+}
